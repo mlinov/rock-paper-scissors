@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let Rock;
+        let Paper;
+        let Scissors;
+
+        const choice = ["Rock", "Paper", "Scissors"];
+
+        function getComputerChoice(choice) {
+          return choice[Math.floor(Math.random() * choice.length)];
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection == "Rock" && computerSelection == "Scissors") {
+                return "You won! Rock beats Scissors!"
+                } else if (playerSelection == "Paper" && computerSelection == "Rock") {
+                    return "You won! Paper beats Rock!"
+                }
+                else if (playerSelection == "Scissors" && computerSelection == "Paper") {
+                    return "You won! Scissors beats Paper!"
+                }
+                else if (playerSelection == "Rock" && computerSelection == "Paper"){
+                    return "You lost! Paper beats Rock!"
+                }
+                else if (playerSelection == "Paper" && computerSelection == "Scissors"){
+                    return "You lost! Scissors beats Paper!"
+                }
+                else if (playerSelection == "Scissors" && computerSelection == "Rock"){
+                    return "You lost! Rock beats Scissors!"
+                }
+                else if (playerSelection === computerSelection) {
+                    return "It's a draw!"
+            }
+            }
+        const playerSelection = "sciSSOrS";
+        const computerSelection = getComputerChoice(choice);
+        console.log(playRound(playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase(), computerSelection));
+
+
+    </script>
+</body>
+</html>
