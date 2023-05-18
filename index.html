@@ -12,39 +12,56 @@
         let Rock;
         let Paper;
         let Scissors;
+        let playerScore = 0;
+        let computerScore = 0;
 
         const choice = ["Rock", "Paper", "Scissors"];
 
+        function game() {
+        
         function getComputerChoice(choice) {
           return choice[Math.floor(Math.random() * choice.length)];
         }
 
         function playRound(playerSelection, computerSelection) {
             if (playerSelection == "Rock" && computerSelection == "Scissors") {
-                return "You won! Rock beats Scissors!"
-                } else if (playerSelection == "Paper" && computerSelection == "Rock") {
+                    playerScore++;
+                    return "You won! Rock beats Scissors!"
+                }
+                else if (playerSelection == "Paper" && computerSelection == "Rock") {
+                    playerScore++;
                     return "You won! Paper beats Rock!"
                 }
                 else if (playerSelection == "Scissors" && computerSelection == "Paper") {
+                    playerScore++;
                     return "You won! Scissors beats Paper!"
                 }
                 else if (playerSelection == "Rock" && computerSelection == "Paper"){
+                    computerScore++;
                     return "You lost! Paper beats Rock!"
                 }
                 else if (playerSelection == "Paper" && computerSelection == "Scissors"){
+                    computerScore++;
                     return "You lost! Scissors beats Paper!"
                 }
                 else if (playerSelection == "Scissors" && computerSelection == "Rock"){
+                    computerScore++;
                     return "You lost! Rock beats Scissors!"
                 }
                 else if (playerSelection === computerSelection) {
                     return "It's a draw!"
             }
             }
-        const playerSelection = "sciSSOrS";
-        const computerSelection = getComputerChoice(choice);
-        console.log(playRound(playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase(), computerSelection));
 
+        let playerSelection = prompt("Enter your choice");
+        let computerSelection = getComputerChoice(choice);
+        
+        console.log(playRound(playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase(), computerSelection));
+        console.log(("User score: " + playerScore + ";"), ("Computer's score: " + computerScore));
+        
+        }
+        
+        game();
 
     </script>
 </body>
